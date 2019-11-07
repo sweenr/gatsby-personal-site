@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-forty-v2",
-  "description": "Gatsby Starter - Forty V2",
+  "name": "gatsby-personal-site",
+  "description": "Personal web site built with Gatsby",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Richard Sween",
   "dependencies": {
     "gatsby": "^2.15.14",
     "gatsby-plugin-manifest": "^2.2.16",
@@ -30,6 +30,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/sweenr/gatsby-personal-site"
   }
 }

@@ -1,16 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Forty V2",
-    author: "Hunter Chang",
-    description: "A Gatsby.js V2 Starter based on Forty by HTML5 UP"
+    title: "Richard Sween\'s Website",
+    author: "Richard Sween",
+    description: "The personal web site of Richard Sween, built with Gatsby"
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Richard Sween\'s Website',
+        short_name: 'Richard\'s site',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
