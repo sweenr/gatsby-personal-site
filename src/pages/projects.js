@@ -28,18 +28,15 @@ const Projects = props => (
             <h2>Projects Overview</h2>
           </header>
           <p>
-            Here I'll talk about the projects listed here in a general sense. In
-            the mean time, here's some doggo ipsum. Doggo ipsum noodle horse
-            snoot smol borking doggo with a long snoot for pats such treat, long
-            water shoob ruff doge, fluffer blep. Fat boi tungg shibe, borking
-            doggo. Puggo smol borking doggo with a long snoot for pats porgo
-            yapper mlem, shooberino mlem. Heckin good boys and girls fluffer
-            shibe boof shoob you are doing me a frighten waggy wags, long bois
-            yapper he made many woofs heck doggo. Smol heckin good boys snoot
-            big ol adorable doggo floofs, smol borking doggo with a long snoot
-            for pats extremely cuuuuuute puggo pats. Dat tungg tho floofs
-            wrinkler tungg heckin, he made many woofs pats long doggo vvv, smol
-            many pats blep.
+            I've worked on a number of projects to solve problems for myself or
+            other people. The projects below show the breadth of things I've
+            done, from building an interface in an embedded device to web sites
+            and Android apps. This web site has even been a project of mine,
+            learning new skills like{' '}
+            <a href="https://www.gatsbyjs.org/">Gatsby</a> for React-based
+            static site generation and{' '}
+            <a href="https://aws.amazon.com/amplify/">AWS Amplify</a> for super
+            simple deployment and hosting.
           </p>
         </div>
       </section>

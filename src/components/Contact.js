@@ -36,6 +36,23 @@ const Contact = props => (
               richard@richardsween.com
             </a>
           </div>
+          <div className="contact-method">
+            <span className="icon alt fa-twitter"></span>
+            <h3>Twitter</h3>
+            <a href="https://twitter.com/_RichardSween">@_RichardSween</a>
+          </div>
+          <div className="contact-method">
+            <span className="icon alt fa-github"></span>
+            <h3>GitHub</h3>
+            <a href="https://github.com/sweenr">sweenr</a>
+          </div>
+          <div className="contact-method">
+            <span className="icon alt fa-linkedin"></span>
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/richard-sween/">
+              Richard Sween
+            </a>
+          </div>
         </section>
       </section>
     </div>

@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 
 import pic11 from '../assets/images/pic11.jpg'
 
-const Generic = props => (
+const About = props => (
   <Layout>
     <Helmet>
       <title>About - Richard Sween</title>
@@ -21,6 +21,21 @@ const Generic = props => (
             <img src={pic11} alt="" />
           </span>
           <p>
+            Hi, my name is Richard! I'm a software developer based in the
+            Jackson, MS metro area. I've been developing software professionally
+            for over 15 years, starting as a summer intern writing a web crawler
+            in Java to search for and index web services. I married the love of
+            my life{' '}
+            <a
+              href="https://kaylasween.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kayla
+            </a>{' '}
+            in 2016 and we have two Jack Russell terriers, Captain and Piper.
+          </p>
+          <p>
             Since late 2016, I have been working as a software engineer at{' '}
             <a
               href="https://kopismobile.com"
@@ -29,9 +44,13 @@ const Generic = props => (
             >
               Kopis Mobile
             </a>
-            , a small company building apps and hardware for the military and
-            first responders. In my time there, I have worked on everything from
-            Linux scripting and C through front-end web development.
+            , a small company based in Mississippi building apps and hardware
+            for the military and first responders. In my time there, I have
+            worked a number of projects, including adding features to a rugged
+            video sharing and streaming platform. Recently I have led the
+            technical implmentation of a web platform to store, organize, and
+            share safety and security best practices for sports and
+            entertainment venues.
           </p>
           <p>
             Previously, I worked on software developement at the{' '}
@@ -63,17 +82,8 @@ const Generic = props => (
             2011.
           </p>
           <p>
-            In my free time, I like to play video games and travel with my
-            beautiful wife,{' '}
-            <a
-              href="http://kaylasween.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Kayla
-            </a>
-            . I also enjoy learning new things and working on side projects,
-            like{' '}
+            In my free time, I like to play video games and travel with Kayla. I
+            also enjoy learning new things and working on side projects, like{' '}
             <a
               href="http://richardsween.com"
               target="_blank"
@@ -111,4 +121,4 @@ const Generic = props => (
   </Layout>
 )
 
-export default Generic
+export default About
