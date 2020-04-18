@@ -2,8 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
-
-import process from '../assets/images/softwareprocess.png'
+import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 const Talks = props => (
   <Layout>
@@ -19,33 +19,87 @@ const Talks = props => (
 
     <div id="main">
       <section id="two" className="spotlights">
-        <section>
-          <img src={process} alt="Screenshot from the Escape Room Timer" />
-          <div className="content">
-            <div className="inner">
-              <header className="major">
-                <h3>Kopis Mobile Software Process</h3>
-              </header>
-              <p>
-                A talk I gave to the Jackson Web & Application Developers July
-                2019 meetup.
-              </p>
-              <ul className="actions">
-                <li>
-                  <a
-                    href="https://kopismobile.com/presentations/jawad-software-process/"
-                    className="button"
-                  >
-                    View presentation
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        {props.data.allMarkdownRemark.edges.map(({ node }) => {
+          return (
+            <section>
+              {node.frontmatter.featuredImage ? (
+                <Img
+                  fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
+                  alt={node.frontmatter.featuredImageAlt}
+                />
+              ) : (
+                ''
+              )}
+              <div className="content">
+                <div className="inner">
+                  <header className="major">
+                    <h3>{node.frontmatter.title}</h3>
+                  </header>
+                  <p>{node.excerpt}</p>
+                  <ul className="actions">
+                    <li>
+                      {node.frontmatter.actionButtonUrl === 'slug' ? (
+                        <Link
+                          to={`/talks${node.fields.slug}`}
+                          className="button"
+                        >
+                          {node.frontmatter.actionButtonText}
+                        </Link>
+                      ) : (
+                        <a
+                          href={node.frontmatter.actionButtonUrl}
+                          className="button"
+                        >
+                          {node.frontmatter.actionButtonText}
+                        </a>
+                      )}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          )
+        })}
       </section>
     </div>
   </Layout>
 )
 
 export default Talks
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "//talks//" } }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            featuredImage {
+              childImageSharp {
+                fixed(width: 576) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+            featuredImageAlt
+            actionButtonText
+            actionButtonUrl
+          }
+        }
+      }
+    }
+  }
+`
