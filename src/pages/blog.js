@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
+import { graphql } from 'gatsby'
 
 const Blog = props => (
   <Layout>
@@ -15,7 +16,17 @@ const Blog = props => (
           <header className="major">
             <h1>Blog</h1>
           </header>
-          <p>Coming soon!</p>
+          {props.data.allMarkdownRemark.edges.map(({ node }) => {
+            return (
+              <div className="blog-listing">
+                <a href={`/blog${node.fields.slug}`}>
+                  <h2>{node.frontmatter.title}</h2>
+                  <small>{node.frontmatter.date}</small>
+                </a>
+                <p>{node.excerpt}</p>
+              </div>
+            )
+          })}
         </div>
       </section>
     </div>
@@ -23,3 +34,30 @@ const Blog = props => (
 )
 
 export default Blog
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "//blogs//" } }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`
