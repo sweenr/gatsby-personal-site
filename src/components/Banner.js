@@ -12,13 +12,13 @@ const Banner = props => (
           I'm passionate about user experience and helping people do things
           better.
         </p>
-        <ul className="actions">
+        {/* <ul className="actions">
           <li>
             <a href="#one" className="button next scrolly">
               Get Started
             </a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   </section>
