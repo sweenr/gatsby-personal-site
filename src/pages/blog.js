@@ -23,6 +23,10 @@ const Blog = props => (
                   <h2>{node.frontmatter.title}</h2>
                   <small>{node.frontmatter.date}</small>
                 </a>
+                <div className="tags">
+                  Tags:
+                  {node.frontmatter.tags?.join()}
+                </div>
                 <p>{node.excerpt}</p>
               </div>
             )
@@ -44,7 +48,10 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "//blogs//" } }
+      filter: {
+        fileAbsolutePath: { regex: "//blogs//" }
+        frontmatter: { draft: { ne: true } }
+      }
     ) {
       edges {
         node {
@@ -55,6 +62,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
           }
         }
       }

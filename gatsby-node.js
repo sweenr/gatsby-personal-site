@@ -19,6 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
             frontmatter {
               title
+              draft
             }
             fileAbsolutePath
           }
@@ -32,24 +33,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (node.fileAbsolutePath.includes('/blogs/')) {
-      createPage({
-        path: `/blog${node.fields.slug}`,
-        component: path.resolve(`src/templates/blog-template.js`),
-        context: { slug: node.fields.slug },
-      })
-    } else if (node.fileAbsolutePath.includes('/talks/')) {
-      createPage({
-        path: `/talks${node.fields.slug}`,
-        component: path.resolve(`src/templates/talk-template.js`),
-        context: { slug: node.fields.slug },
-      })
-    } else if (node.fileAbsolutePath.includes('/projects/')) {
-      createPage({
-        path: `/projects${node.fields.slug}`,
-        component: path.resolve(`src/templates/project-template.js`),
-        context: { slug: node.fields.slug },
-      })
+    if (!node.frontmatter.draft) {
+      if (node.fileAbsolutePath.includes('/blogs/')) {
+        createPage({
+          path: `/blog${node.fields.slug}`,
+          component: path.resolve(`src/templates/blog-template.js`),
+          context: { slug: node.fields.slug },
+        })
+      } else if (node.fileAbsolutePath.includes('/talks/')) {
+        createPage({
+          path: `/talks${node.fields.slug}`,
+          component: path.resolve(`src/templates/talk-template.js`),
+          context: { slug: node.fields.slug },
+        })
+      } else if (node.fileAbsolutePath.includes('/projects/')) {
+        createPage({
+          path: `/projects${node.fields.slug}`,
+          component: path.resolve(`src/templates/project-template.js`),
+          context: { slug: node.fields.slug },
+        })
+      }
     }
   })
 }

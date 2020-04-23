@@ -54,6 +54,7 @@ const Projects = props => (
                     <h3>{node.frontmatter.title}</h3>
                   </header>
                   <p>{node.excerpt}</p>
+                  <p className="tags">Tags: {node.frontmatter.tags?.join()}</p>
                   <ul className="actions">
                     <li>
                       {node.frontmatter.actionButtonUrl === 'slug' ? (
@@ -94,7 +95,10 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "//projects//" } }
+      filter: {
+        fileAbsolutePath: { regex: "//projects//" }
+        frontmatter: { draft: { ne: true } }
+      }
     ) {
       edges {
         node {
@@ -115,6 +119,7 @@ export const pageQuery = graphql`
             featuredImageAlt
             actionButtonText
             actionButtonUrl
+            tags
           }
         }
       }

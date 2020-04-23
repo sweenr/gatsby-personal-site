@@ -5,6 +5,12 @@ featuredImage: ../../src/assets/images/enterlocked_running.png
 featuredImageAlt: Escape Room timer screen
 actionButtonText: Learn More
 actionButtonUrl: slug
+draft: false
+tags:
+  - python
+  - raspberry pi
+  - vue
+  - flask
 ---
 
 > Kayla and I built a timer display for a local escape room. The device, built using Python Flask running on a Raspberry Pi 3, showed the remaining time and other info for the players in the room, designed to look like a old dial TV. It used a web backend built with Vue for the game master to control the display.
