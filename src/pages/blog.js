@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 const Blog = props => (
   <Layout>
     <Helmet>
-      <title>Blog - Richard Sween</title>
+      <title>Blog</title>
       <meta name="description" content="Richard Sween's Blog" />
     </Helmet>
 

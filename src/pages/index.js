@@ -12,7 +12,7 @@ const HomeIndex = props => {
   return (
     <Layout showContact={true}>
       <Helmet
-        title="Richard Sween's Website"
+        title="Home"
         meta={[
           {
             name: 'description',

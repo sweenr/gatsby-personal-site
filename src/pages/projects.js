@@ -8,7 +8,7 @@ import BannerLanding from '../components/BannerLanding'
 const Projects = props => (
   <Layout>
     <Helmet>
-      <title>Projects - Richard Sween</title>
+      <title>Projects</title>
       <meta name="description" content="Projects by Richard Sween" />
     </Helmet>
 

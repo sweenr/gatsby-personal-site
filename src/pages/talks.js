@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 const Talks = props => (
   <Layout>
     <Helmet>
-      <title>Talks - Richard Sween</title>
+      <title>Talks</title>
       <meta name="description" content="Talks by Richard Sween" />
     </Helmet>
 
