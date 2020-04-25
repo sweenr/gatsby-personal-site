@@ -19,11 +19,15 @@ function BlogTemplate({ data }) {
               <h1>{frontmatter.title}</h1>
               <small>{frontmatter.date}</small>
             </header>
-            <Img
-              fluid={frontmatter.featuredImage.childImageSharp.fluid}
-              alt={frontmatter.featuredImageAlt}
-              style={{ marginBottom: '30px' }}
-            />
+            {frontmatter.featuredImage ? (
+              <Img
+                fluid={frontmatter.featuredImage.childImageSharp.fluid}
+                alt={frontmatter.featuredImageAlt}
+                style={{ marginBottom: '30px' }}
+              />
+            ) : (
+              ''
+            )}
             <div dangerouslySetInnerHTML={{ __html: html }} />
           </div>
         </section>
