@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
+import Img from 'gatsby-image'
 
 function BlogTemplate({ data }) {
   const { markdownRemark } = data
@@ -18,6 +19,11 @@ function BlogTemplate({ data }) {
               <h1>{frontmatter.title}</h1>
               <small>{frontmatter.date}</small>
             </header>
+            <Img
+              fluid={frontmatter.featuredImage.childImageSharp.fluid}
+              alt={frontmatter.featuredImageAlt}
+              style={{ marginBottom: '30px' }}
+            />
             <div dangerouslySetInnerHTML={{ __html: html }} />
           </div>
         </section>
@@ -35,6 +41,14 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        featuredImageAlt
       }
     }
   }
