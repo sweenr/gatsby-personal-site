@@ -27,6 +27,7 @@ const Blog = props => (
                   Tags:
                   {node.frontmatter.tags?.join()}
                 </div>
+                <p>Estimated reading time: {node.timeToRead} minutes</p>
                 <p>{node.excerpt}</p>
               </div>
             )
@@ -64,6 +65,7 @@ export const pageQuery = graphql`
             title
             tags
           }
+          timeToRead
         }
       }
     }
