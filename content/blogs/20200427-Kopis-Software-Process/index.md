@@ -3,7 +3,7 @@ title: 'Software Process: A Journey through History'
 date: 2020-04-27T20:50:21.162Z
 featuredImage: pipes.jpg
 featuredImageAlt: Industrial Piping at Martins Creek Power Plant
-draft: true
+draft: false
 tags:
   - software process
   - agile

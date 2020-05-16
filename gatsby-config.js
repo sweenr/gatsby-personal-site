@@ -3,6 +3,7 @@ module.exports = {
     title: "Richard Sween's Website",
     author: 'Richard Sween',
     description: 'The personal web site of Richard Sween, built with Gatsby',
+    siteUrl: 'https://richardsween.dev',
   },
   plugins: [
     {
@@ -77,7 +78,6 @@ module.exports = {
           {
             site {
               siteMetadata {
-                title
                 description
                 siteUrl
                 site_url: siteUrl
@@ -118,7 +118,8 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'RichardSween.com RSS Feed',
+            title: `Richard Sween's Blog`,
+            author: 'Richard Sween',
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
