@@ -33,7 +33,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (!node.frontmatter.draft) {
+    if (!node.frontmatter.draft || prcess.env.NODE_ENV === 'development') {
       if (node.fileAbsolutePath.includes('/blogs/')) {
         createPage({
           path: `/blog${node.fields.slug}`,
