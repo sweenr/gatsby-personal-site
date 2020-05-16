@@ -5,6 +5,12 @@ module.exports = {
     description: 'The personal web site of Richard Sween, built with Gatsby',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-166870183-1',
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
