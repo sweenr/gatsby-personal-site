@@ -78,7 +78,6 @@ module.exports = {
           {
             site {
               siteMetadata {
-                description
                 siteUrl
                 site_url: siteUrl
               }
@@ -101,7 +100,8 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [frontmatter___date] }, 
+                  filter: { frontmatter: { draft: { eq: false} }, fileAbsolutePath: { regex: "/.+\/blogs\/.+/"} }
                 ) {
                   edges {
                     node {
@@ -110,6 +110,7 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
+                        categories: tags
                         date
                       }
                     }
@@ -120,11 +121,8 @@ module.exports = {
             output: '/rss.xml',
             title: `Richard Sween's Blog`,
             author: 'Richard Sween',
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
-            match: '^/blog/',
+            description:
+              'Personal blog of Richard Sween talking about tech and other things that interest me',
           },
         ],
       },
