@@ -70,12 +70,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        appendScript: require.resolve(`src/offline-ga.js`),
-      },
-    },
+    // TODO: fix this so it works with GA, had problems finding the script below
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     appendScript: require.resolve(`src/offline-ga.js`),
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
