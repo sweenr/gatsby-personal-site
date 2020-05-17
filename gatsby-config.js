@@ -77,6 +77,7 @@ module.exports = {
     //     appendScript: require.resolve(`src/offline-ga.js`),
     //   },
     // },
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
