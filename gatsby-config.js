@@ -70,7 +70,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        appendScript: require.resolve(`src/offline-ga.js`),
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
