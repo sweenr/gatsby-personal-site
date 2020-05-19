@@ -69,6 +69,13 @@ module.exports = {
         icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://richardsween.dev`,
+        stripQueryString: true,
+      },
+    },
     'gatsby-plugin-sass',
     // TODO: fix this so it works with GA, had problems finding the script below
     // {

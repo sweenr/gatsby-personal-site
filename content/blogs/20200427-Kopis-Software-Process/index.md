@@ -78,9 +78,7 @@ Our software process journey is far from over. There are still pain points that 
 1. **Invest in automated tooling** - there's no reason you should be stressing out over manual build and deploy processes in 2020.
 1. **Take time to document, develop, and refine your software process** - just like with continuing education, there are always things to learn and improve about your own software process.
 
-## Sound Off
-
-I hope this has inspired you to take a critical look at your software process, especially if you haven't given it much thought recently, or ever (no shame!). Where are you or your team at in your process improvement journey? What are you or your company doing that you're proud of or know you need help with?
+### Photo credits
 
 Mechanical piping photo by <a href="https://unsplash.com/@martinadams?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Martin Adams</a> on <a href="/s/photos/process?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
