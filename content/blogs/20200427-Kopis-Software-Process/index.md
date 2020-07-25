@@ -1,5 +1,7 @@
 ---
 title: 'Software Process: A Journey through History'
+author: Richard Sween
+description: A history of Kopis Mobile's softwar process improvements; what worked and what didn't for us.
 date: 2020-04-27T20:50:21.162Z
 featuredImage: pipes.jpg
 featuredImageAlt: Industrial Piping at Martins Creek Power Plant

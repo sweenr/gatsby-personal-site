@@ -1,5 +1,7 @@
 ---
 title: We used to run Docker in the cloud. Here's why we don't anymore.
+author: Richard Sween
+description: While we were successful, we decided there was a better way. Find out what our biggest mistake was and how it could help you.
 date: 2020-04-23T20:50:21.162Z
 featuredImage: whale.jpg
 featuredImageAlt: Whale Breaching
