@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 const Contact = () => {
   const formAction =
     'https://ntfamacl9j.execute-api.us-east-2.amazonaws.com/prod/contact'
+
+  const [success, setSuccess] = useState(false)
 
   const { register, errors, handleSubmit } = useForm()
   const onSubmit = data => {
@@ -16,68 +18,81 @@ const Contact = () => {
       })
     }
     //change to successfully submitted message
+    setSuccess(true)
   }
 
   return (
     <section id="contact">
       <div className="inner">
         <section>
-          <form method="post" onSubmit={handleSubmit(onSubmit)} noValidate>
-            <div className="field half first">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                ref={register({ required: true })}
-              />
-              {errors.name && (
-                <p className="form-error">Name is a required field</p>
-              )}
-            </div>
-            <div className="field half second">
-              <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                ref={register({
-                  required: true,
-                  pattern: /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
-                })}
-              />
-              {errors.email?.type === 'required' && (
-                <p className="form-error">Email address is a required field</p>
-              )}
-              {errors.email?.type === 'pattern' && (
-                <p className="form-error">Please enter a valid email address</p>
-              )}
-            </div>
-            <div className="field half third">
-              <label htmlFor="dayOfWeek">Day of Week</label>
-              <input type="text" name="dayOfWeek" id="dayOfWeek" />
-            </div>
-            <div className="field">
-              <label htmlFor="message">Message</label>
-              <textarea
-                name="message"
-                id="message"
-                rows="6"
-                ref={register({ required: true })}
-              />
-              {errors.message && (
-                <p className="form-error">This is a required field</p>
-              )}
-            </div>
-            <ul className="actions">
-              <li>
-                <input type="submit" value="Send Message" className="special" />
-              </li>
-              <li>
-                <input type="reset" value="Clear" />
-              </li>
-            </ul>
-          </form>
+          {success ? (
+            <p>Thanks for contacting me, I'll be in touch as soon as I can.</p>
+          ) : (
+            <form method="post" onSubmit={handleSubmit(onSubmit)} noValidate>
+              <div className="field half first">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  ref={register({ required: true })}
+                />
+                {errors.name && (
+                  <p className="form-error">Name is a required field</p>
+                )}
+              </div>
+              <div className="field half second">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  ref={register({
+                    required: true,
+                    pattern: /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
+                  })}
+                />
+                {errors.email?.type === 'required' && (
+                  <p className="form-error">
+                    Email address is a required field
+                  </p>
+                )}
+                {errors.email?.type === 'pattern' && (
+                  <p className="form-error">
+                    Please enter a valid email address
+                  </p>
+                )}
+              </div>
+              <div className="field half third">
+                <label htmlFor="dayOfWeek">Day of Week</label>
+                <input type="text" name="dayOfWeek" id="dayOfWeek" />
+              </div>
+              <div className="field">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="6"
+                  ref={register({ required: true })}
+                />
+                {errors.message && (
+                  <p className="form-error">This is a required field</p>
+                )}
+              </div>
+              <ul className="actions">
+                <li>
+                  <input
+                    type="submit"
+                    value="Send Message"
+                    className="special"
+                  />
+                </li>
+                <li>
+                  <input type="reset" value="Clear" />
+                </li>
+              </ul>
+            </form>
+          )}
         </section>
         <section className="split">
           <section>
