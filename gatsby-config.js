@@ -77,6 +77,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-web-monetization`,
+      options: {
+        paymentPointer: `$ilp.uphold.com/Rdy2U4eKDMb3`,
+      },
+    },
     // TODO: fix this so it works with GA, had problems finding the script below
     // {
     //   resolve: `gatsby-plugin-offline`,
