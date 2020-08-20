@@ -5,7 +5,7 @@ description: While we were successful, we decided there was a better way. Find o
 date: 2020-04-23T20:50:21.162Z
 featuredImage: whale.jpg
 featuredImageAlt: Whale Breaching
-draft: true
+draft: false
 tags:
   - Kubernetes
   - docker
