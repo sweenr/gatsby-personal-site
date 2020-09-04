@@ -5,7 +5,7 @@ desription: Guide to setting up multiple developer access in AWS Amplify
 date: 2020-08-31T20:50:21.162Z
 featuredImage: hero.jpg
 featuredImageAlt: Two people sitting at computers
-draft: true
+draft: false
 tags:
   - amplify
 ---
