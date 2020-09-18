@@ -12,7 +12,7 @@ tags:
   - react
 ---
 
-Recently, I wrote about a post about how helpful it is that I know how to code and can apply it to problems I have in everyday life. In that post, which you can read [here](/blogs/Benefits-Learning-Code/), I talked about how I wanted to keep track of my progress in a video game and how I created a simple web app to solve my problem. In this post, I'll walk through my process of creating the app using the Web Storage API in Javascript to handle my data storage without needing a database or user accounts.
+I recently wrote a post about how knowing how to code is a useful skill that can be applied to problems in everyday life, not just as a career. In that post, which you can read [here](/blogs/Benefits-Learning-Code/), I talked about how I wanted to keep track of my progress in a video game and how I created a simple web app to solve my problem. In this post, I'll walk through my process of creating the app using the Web Storage API in Javascript to handle my data storage without needing a database or user accounts.
 
 # Designing a Backend-less Web App
 
@@ -24,7 +24,7 @@ Per [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/local
 
 There are two major limitations of localStorage. The first is that both keys and values in localStorage must be strings. There are some ways around this limitation of course. Primitives can of course easily be turned into strings and then parsed back into their primitive type. For JavaScript objects, you can call `JSON.stringify(obj)` to turn the object into a string for storage, which you can then use `JSON.parse(string)` to covert back into an object. You could even store files or images in localStorage if you store the raw image data as a string, but I wouldn't recommend it.
 
-The second limitation on localStorage is size. The total size available depends on the browser and ranges from 2.5MB to 10MB or can be unlimited. Again, localStorage isn't a place to store a lot of files or other large data but it is perfect for storing other data that is too large to fit on a 2KB cookie. Just be mindful about the amount of data you intend to store in the user's browser and try to limit it as much as possible.
+The second limitation on localStorage is size. The total size available depends on the browser and ranges from 2.5MB to 10MB or can be unlimited. Again, localStorage isn't a place to store a lot of files or other large data but it is perfect for storing other data that is too large to fit on a 2KB cookie. Be mindful of your users, however. They may not have a large amount of storage to dedicate to the browser, so you should limit the amount of data you intend to store as much as possible.
 
 # Using LocalStorage in a React App
 
