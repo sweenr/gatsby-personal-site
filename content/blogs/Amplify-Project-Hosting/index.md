@@ -4,7 +4,7 @@ author: Richard Sween
 desription: In this post I'll show you how to host side project under your custom domain in AWS Amplify
 date: 2020-09-24T20:50:21.162Z
 featuredImage: hero.jpg
-featuredImageAlt: Shipping containers stacked in a lot
+featuredImageAlt: Old music amplifier in black and white
 draft: false
 tags:
   - amplify
