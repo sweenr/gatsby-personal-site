@@ -3,12 +3,15 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Banner from '../components/Banner'
+import { getSrc } from 'gatsby-plugin-image'
 
 const HomeIndex = props => {
-  const projector = props.data.projector.childImageSharp.fluid.src
-  const keyboard = props.data.keyboard.childImageSharp.fluid.src
-  const typewriter = props.data.typewriter.childImageSharp.fluid.src
-  const pic04 = props.data.pic04.childImageSharp.fluid.src
+  const projector = getSrc(props.data.projector.childImageSharp.gatsbyImageData)
+  const keyboard = getSrc(props.data.keyboard.childImageSharp.gatsbyImageData)
+  const typewriter = getSrc(
+    props.data.typewriter.childImageSharp.gatsbyImageData
+  )
+  const pic04 = getSrc(props.data.pic04.childImageSharp.gatsbyImageData)
   return (
     <Layout showContact={true}>
       <Helmet
@@ -77,30 +80,22 @@ export const pageQuery = graphql`
   query {
     projector: file(relativePath: { eq: "projector.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
-          src
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     keyboard: file(relativePath: { eq: "keyboard.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
-          src
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     typewriter: file(relativePath: { eq: "typewriter.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
-          src
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     pic04: file(relativePath: { eq: "pic04.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
-          src
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

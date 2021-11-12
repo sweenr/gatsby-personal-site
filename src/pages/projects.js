@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
 
@@ -41,8 +41,11 @@ const Projects = props => (
           return (
             <section key={node.fields.slug}>
               {node.frontmatter.featuredImage ? (
-                <Img
-                  fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
+                <GatsbyImage
+                  image={
+                    node.frontmatter.featuredImage.childImageSharp
+                      .gatsbyImageData
+                  }
                   alt={node.frontmatter.featuredImageAlt}
                 />
               ) : (
@@ -111,9 +114,7 @@ export const pageQuery = graphql`
             title
             featuredImage {
               childImageSharp {
-                fixed(width: 576) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
             featuredImageAlt

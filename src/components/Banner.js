@@ -1,19 +1,18 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { getSrc } from 'gatsby-plugin-image'
 
 const Banner = () => {
   const data = useStaticQuery(graphql`
     query {
       code: file(relativePath: { eq: "code2.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 1920) {
-            src
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
   `)
-  const code = data.code.childImageSharp.fluid.src
+  const code = getSrc(data.code.childImageSharp.gatsbyImageData)
   return (
     <section
       id="banner"
