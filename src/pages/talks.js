@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Talks = props => (
   <Layout>
@@ -23,8 +23,11 @@ const Talks = props => (
           return (
             <section>
               {node.frontmatter.featuredImage ? (
-                <Img
-                  fixed={node.frontmatter.featuredImage.childImageSharp.fixed}
+                <GatsbyImage
+                  image={
+                    node.frontmatter.featuredImage.childImageSharp
+                      .gatsbyImageData
+                  }
                   alt={node.frontmatter.featuredImageAlt}
                 />
               ) : (
@@ -93,9 +96,7 @@ export const pageQuery = graphql`
             title
             featuredImage {
               childImageSharp {
-                fixed(width: 576) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
             featuredImageAlt

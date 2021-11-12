@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
-import Img from 'gatsby-image'
+import { GatsbyImage, getSrc } from 'gatsby-plugin-image'
 
 function BlogTemplate({ data }) {
   const { markdownRemark, site } = data
@@ -29,7 +29,7 @@ function BlogTemplate({ data }) {
             property: `og:image`,
             content:
               siteMetadata.siteUrl +
-              frontmatter.featuredImage.childImageSharp.fluid.src,
+              getSrc(frontmatter.featuredImage.childImageSharp.gatsbyImageData),
           },
           {
             name: `og:image:alt`,
@@ -59,7 +59,7 @@ function BlogTemplate({ data }) {
             name: `twitter:image`,
             content:
               siteMetadata.siteUrl +
-              frontmatter.featuredImage.childImageSharp.fluid.src,
+              getSrc(frontmatter.featuredImage.childImageSharp.gatsbyImageData),
           },
           {
             name: `twitter:image:alt`,
@@ -77,8 +77,10 @@ function BlogTemplate({ data }) {
               <small>{frontmatter.date}</small>
             </header>
             {frontmatter.featuredImage ? (
-              <Img
-                fluid={frontmatter.featuredImage.childImageSharp.fluid}
+              <GatsbyImage
+                image={
+                  frontmatter.featuredImage.childImageSharp.gatsbyImageData
+                }
                 alt={frontmatter.featuredImageAlt}
                 style={{ marginBottom: '30px' }}
               />
@@ -114,9 +116,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 1200) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         featuredImageAlt
