@@ -5,7 +5,7 @@ import BannerLanding from '../components/BannerLanding'
 import { Link, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
-const Talks = props => (
+const Talks = (props) => (
   <Layout>
     <Helmet>
       <title>Talks</title>
@@ -29,6 +29,7 @@ const Talks = props => (
                       .gatsbyImageData
                   }
                   alt={node.frontmatter.featuredImageAlt}
+                  objectFit="contain"
                 />
               ) : (
                 ''
@@ -38,8 +39,10 @@ const Talks = props => (
                   <header className="major">
                     <h3>{node.frontmatter.title}</h3>
                   </header>
-                  <p>{node.excerpt}</p>
-                  <p className="tags">Tags: {node.frontmatter.tags?.join()}</p>
+                  <div dangerouslySetInnerHTML={{ __html: node.html }} />
+                  <p className="tags">
+                    Tags: {node.frontmatter.tags?.join(', ')}
+                  </p>
                   <ul className="actions">
                     <li>
                       {node.frontmatter.actionButtonUrl === 'slug' ? (
@@ -53,6 +56,7 @@ const Talks = props => (
                         <a
                           href={node.frontmatter.actionButtonUrl}
                           className="button"
+                          target="_blank"
                         >
                           {node.frontmatter.actionButtonText}
                         </a>
@@ -87,7 +91,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          html
           fields {
             slug
           }

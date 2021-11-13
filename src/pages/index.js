@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import Banner from '../components/Banner'
 import { getSrc } from 'gatsby-plugin-image'
 
-const HomeIndex = props => {
+const HomeIndex = (props) => {
   const projector = getSrc(props.data.projector.childImageSharp.gatsbyImageData)
   const keyboard = getSrc(props.data.keyboard.childImageSharp.gatsbyImageData)
   const typewriter = getSrc(
@@ -31,6 +31,16 @@ const HomeIndex = props => {
       <Banner />
 
       <div id="main">
+        <section id="zero">
+          <div className="inner">
+            <header className="major">
+              <h2>Who am I?</h2>
+            </header>
+            <p>
+              Learn more about some of the things I've done or written below.
+            </p>
+          </div>
+        </section>
         <section id="one" className="tiles">
           <article style={{ backgroundImage: `url(${projector})` }}>
             <header className="major">
