@@ -1,7 +1,7 @@
 ---
 title: 'Burnout: Physical and Mental'
 author: Richard Sween
-desription: Burnout can mean different things to different people or at different times.
+description: Burnout can mean different things to different people or at different times.
 date: 2020-09-08T20:50:21.162Z
 featuredImage: hero.jpg
 featuredImageAlt: An exhausted koala resting in a tree

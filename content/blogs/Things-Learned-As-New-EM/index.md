@@ -1,7 +1,7 @@
 ---
 title: '3 Things I Have Learned as an Engineering Manager'
 author: Richard Sween
-desription: As I approach my second anniversary as an Engineering Manager, a look back on some of the things I've learned
+description: As I approach my second anniversary as an Engineering Manager, a look back on some of the things I've learned
 date: 2022-01-25T20:50:21.162Z
 featuredImage: hero.jpg
 featuredImageAlt: Shipping containers stacked in a lot
@@ -12,7 +12,7 @@ tags:
   - engineering manager
 ---
 
-I've officalially had the role of Engineering Manager (EM) for almost two years now. Looking back, I hope some of my experiences can help out those who are interested in transitioning into an EM role, or those who aren't sure if EM is the right fit for them.
+I've officially had the role of Engineering Manager (EM) for almost two years now. Looking back, I hope some of my experiences can help out those who are interested in transitioning into an EM role, or those who aren't sure if EM is the right fit for them.
 
 # My Path to Engieering Management
 
@@ -39,4 +39,3 @@ From my own experience, these are some things I would think about if you're new 
 - Being a manager is something you have to work on like any other skill. Much like learning a new tool or language as an IC, learning to be a manger takes time, practice, and guidance. If you don't have a lot of leadership experience, I would recommend looking into resources for EMs, like [Ryan Burgess's list of resources for EMs](https://github.com/ryanburgess/engineer-manager) or [Sarah Drasner's book on Engineering Management](https://www.engmanagement.dev/).
 - One-on-one meetings with your direct reports are crucial both for collecting/providing feedback and mentoring. It was always one of my favorite things that my manager did with me so I knew that it would be important for me to continue. Find a tool that can help with planning and tracking your 1-1 meetings. I've used [Lighthouse](https://getlighthouse.com/) and [OfficeVibe](https://officevibe.com/) which can also send out weekly anonymous temperature check surveys as well.
 - I mentioned it above but be aware that as your scope increases, your definition of success will change as well. Your goals aren't about moving your own sprint tickets across the board as much as making sure your team has everything the need to get their jobs done, whether that's removing obstacles or breaking down problems or making sure the right person is working on the right task.
-

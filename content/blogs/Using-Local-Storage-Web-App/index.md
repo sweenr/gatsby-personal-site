@@ -1,7 +1,7 @@
 ---
 title: 'Building a Backend-less Web App with LocalStorage'
 author: Richard Sween
-desription: Web apps don't need a database or logins to store data and be useful.
+description: Web apps don't need a database or logins to store data and be useful.
 date: 2020-09-17T20:50:21.162Z
 featuredImage: hero.jpg
 featuredImageAlt: Shipping containers stacked in a lot

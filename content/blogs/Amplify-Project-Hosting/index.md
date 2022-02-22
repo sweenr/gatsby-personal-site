@@ -1,7 +1,7 @@
 ---
 title: 'Hosting Project Under a Custom Domain in Amplify'
 author: Richard Sween
-desription: In this post I'll show you how to host side project under your custom domain in AWS Amplify
+description: In this post I'll show you how to host side project under your custom domain in AWS Amplify
 date: 2020-09-24T20:50:21.162Z
 featuredImage: hero.jpg
 featuredImageAlt: Old music amplifier in black and white
