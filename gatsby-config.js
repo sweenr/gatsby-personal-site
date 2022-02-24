@@ -12,6 +12,13 @@ module.exports = {
         trackingId: 'UA-166870183-1',
       },
     },
+    {
+      resolve: `gatsby-plugin-firstparty`,
+      options: {
+        sourceUrl: 'fp.richardsween.dev',
+        writeKey: 'jG3EnrwJk5Ri6wgq',
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -117,7 +124,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
