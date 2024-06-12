@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
 
-const Projects = props => (
+const Projects = (props) => (
   <Layout>
     <Helmet>
       <title>Projects</title>
@@ -97,7 +97,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
         fileAbsolutePath: { regex: "//projects//" }
         frontmatter: { draft: { ne: true } }

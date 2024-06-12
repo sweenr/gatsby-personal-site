@@ -62,6 +62,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -94,12 +95,12 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-web-monetization`,
-      options: {
-        paymentPointer: `$ilp.uphold.com/Rdy2U4eKDMb3`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-web-monetization`,
+    //   options: {
+    //     paymentPointer: `$ilp.uphold.com/Rdy2U4eKDMb3`,
+    //   },
+    // },
     // TODO: fix this so it works with GA, had problems finding the script below
     // {
     //   resolve: `gatsby-plugin-offline`,

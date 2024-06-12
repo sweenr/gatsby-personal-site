@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 
-const Blog = props => (
+const Blog = (props) => (
   <Layout>
     <Helmet>
       <title>Blog</title>
@@ -48,7 +48,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
         fileAbsolutePath: { regex: "//blogs//" }
         frontmatter: { draft: { ne: true } }

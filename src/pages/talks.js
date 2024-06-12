@@ -57,6 +57,7 @@ const Talks = (props) => (
                           href={node.frontmatter.actionButtonUrl}
                           className="button"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           {node.frontmatter.actionButtonText}
                         </a>
@@ -83,7 +84,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
         fileAbsolutePath: { regex: "//talks//" }
         frontmatter: { draft: { ne: true } }

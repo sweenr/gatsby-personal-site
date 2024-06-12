@@ -7,8 +7,12 @@ const Contact = () => {
 
   const [success, setSuccess] = useState(false)
 
-  const { register, errors, handleSubmit } = useForm()
-  const onSubmit = data => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm()
+  const onSubmit = (data) => {
     if (!data.dayOfWeek) {
       fetch(formAction, {
         method: 'POST',
@@ -33,9 +37,8 @@ const Contact = () => {
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
-                  name="name"
                   id="name"
-                  ref={register({ required: true })}
+                  {...register('name', { required: true })}
                 />
                 {errors.name && (
                   <p className="form-error">Name is a required field</p>
@@ -47,9 +50,10 @@ const Contact = () => {
                   type="text"
                   name="email"
                   id="email"
-                  ref={register({
+                  {...register('email', {
                     required: true,
-                    pattern: /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
+                    pattern:
+                      /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
                   })}
                 />
                 {errors.email?.type === 'required' && (
@@ -70,10 +74,9 @@ const Contact = () => {
               <div className="field">
                 <label htmlFor="message">Message</label>
                 <textarea
-                  name="message"
                   id="message"
                   rows="6"
-                  ref={register({ required: true })}
+                  {...register('message', { required: true })}
                 />
                 {errors.message && (
                   <p className="form-error">This is a required field</p>
