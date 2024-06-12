@@ -25,9 +25,8 @@ const Banner = () => {
         </header>
         <div className="content">
           <p>
-            I'm a web and app developer based in Jackson, MS. <br />
-            I'm passionate about user experience and helping people do things
-            better.
+            I'm an engineering leader based in Jackson, MS. <br />
+            I'm passionate about user experience and helping people grow.
           </p>
           {/* <ul className="actions">
           <li>

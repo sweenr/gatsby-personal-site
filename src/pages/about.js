@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 
 import pic11 from '../assets/images/pic11.jpg'
 
-const About = props => (
+const About = (props) => (
   <Layout>
     <Helmet>
       <title>About</title>
@@ -21,11 +21,12 @@ const About = props => (
             <img src={pic11} alt="" />
           </span>
           <p>
-            Hi, my name is Richard! I'm a software developer based in the
-            Jackson, MS metro area. I've been developing software professionally
-            for over 15 years, starting as a summer intern writing a web crawler
-            in Java to search for and index web services. I married the love of
-            my life{' '}
+            Hi, my name is Richard! I'm an engineering leader and software
+            developer based in the Jackson, MS metro area. I've been leading
+            teams for over five years and developing software professionally for
+            over 15 years, starting as a summer intern writing a web crawler in
+            Java to search for and index web services. I married the love of my
+            life{' '}
             <a
               href="https://kaylasween.com"
               target="_blank"
@@ -36,18 +37,29 @@ const About = props => (
             in 2016 and we have two Jack Russell terriers, Captain and Piper.
           </p>
           <p>
-            Since late 2016, I have been working as a software engineer at{' '}
+            Currently, I am Head of Engineering at{' '}
             <a
-              href="https://kopismobile.com"
+              href="http://hourwork.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Kopis Mobile
+              HourWork
             </a>
-            , a small company based in Mississippi building apps and hardware
-            for the military and first responders. In my time there, I have
-            worked a number of projects, including adding features to a rugged
-            video sharing and streaming platform. Recently I have led the
+            , a B2B SaaS company that helps hourly employers, primarily in the
+            quick-service restaurant industry, recruit and retain employees. Our
+            biggest project there by far was a complete system rebuild,
+            replacing the existing tech debt-ladened backend and no-code Bubble
+            frontend with a new full stack Javascript system running an Express
+            API and Lambdas on the backend and React on the frontend. We
+            finished the project in nine months and released it with no major
+            customer-facing issues.
+          </p>
+          <p>
+            Before that, I was as an Engineering Manager and software engineer
+            at Kopis Mobile, a small company based in Mississippi building apps
+            and hardware for the military and first responders. In my time
+            there, I worked a number of projects, including adding features to a
+            rugged video sharing and streaming platform. I also led the
             technical implmentation of a web platform to store, organize, and
             share safety and security best practices for sports and
             entertainment venues.
@@ -82,8 +94,16 @@ const About = props => (
             2011.
           </p>
           <p>
-            In my free time, I like to play video games and travel with Kayla. I
-            also enjoy learning new things and working on side projects, like{' '}
+            In my free time, I like to tinker with home automation using{' '}
+            <a
+              href="http://home-assistant.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Home Assistant
+            </a>
+            , play video games, and travel with Kayla. I also enjoy learning new
+            things and working on side projects, like{' '}
             <a
               href="http://richardsween.com"
               target="_blank"

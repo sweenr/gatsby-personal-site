@@ -5,7 +5,7 @@ description: As I approach my second anniversary as an Engineering Manager, a lo
 date: 2022-01-25T20:50:21.162Z
 featuredImage: hero.jpg
 featuredImageAlt: Shipping containers stacked in a lot
-draft: true
+draft: false
 tags:
   - management
   - tech jobs

@@ -5,7 +5,7 @@ description: After reviewing coding academy presentations, here are three common
 date: 2022-02-03T20:50:21.162Z
 featuredImage: hero.jpg
 featuredImageAlt: Shipping containers stacked in a lot
-draft: true
+draft: false
 tags:
   - tips
   - junior devs
@@ -151,4 +151,10 @@ This tip is especially important when it comes to deadlines. Often, deadlines ar
 
 There are two corollaries to this tip. First: don't mess with your project on deadline day! Once you're project is in a stable, good place, don't mess with it too close to your deadline. Inevitably, something will go wrong and you run the risk of not having anything to show for your work.
 
-The second corollary is your users don't care about your tech stack. As a user, the only interface they will have with your application is the UI -- they
+The second corollary is your users don't care about your tech stack. As a user, the only interface they will have with your application is the UI -- they don't care what programming language you used, or whether it was the latest or greatest. They just want to have a good experience using what you've built.
+
+# Wrapping it Up
+
+I always love to be able to help review game demo day at the Mississippi Coding Academy. Serving as an reviewer highlighted both the creativity and some common challenges faced by newer developers. Repetitive code can hinder readability and maintainability. By refactoring code into functions or classes, developers can streamline their work, making it easier to manage and debug. Another frequent issue was using text on images without ensuring adequate contrast, affecting accessibility. Adding a semi-transparent background can improve readability for all users.
+
+Finally, it's crucial for developers to prioritize functionality over aesthetics, especially as deadlines approach. A working prototype is more valuable than an incomplete but beautifully designed project. Avoid making last-minute changes before deadlines and focus on delivering a user-friendly experience rather than the specifics of the tech stack.
