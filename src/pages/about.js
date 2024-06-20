@@ -1,16 +1,11 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import Layout from '../components/layout'
+import { Seo } from '../components/Seo'
 
 import pic11 from '../assets/images/pic11.jpg'
 
 const About = (props) => (
   <Layout>
-    <Helmet>
-      <title>About</title>
-      <meta name="description" content="About Richard Sween" />
-    </Helmet>
-
     <div id="main" className="alt">
       <section id="one">
         <div className="inner">
@@ -142,3 +137,7 @@ const About = (props) => (
 )
 
 export default About
+
+export const Head = () => (
+  <Seo title="About" description={'About Richard Sween'} />
+)

@@ -6,21 +6,38 @@
 
 /* Main */
 
-	#main {
-		background-color: _palette(bg-alt);
+#main {
+  background-color: _palette(bg-alt);
 
-		> * {
-			border-top: solid 1px _palette(border);
+  > * {
+    border-top: solid 1px _palette(border);
 
-			&:first-child {
-				border-top: 0;
-			}
+    &:first-child {
+      border-top: 0;
+    }
 
-			@include inner;
-		}
+    @include inner;
+  }
 
-		&.alt {
-			background-color: transparent;
-			border-bottom: solid 1px _palette(border);
-		}
-	}
+  &.alt {
+    background-color: transparent;
+    border-bottom: solid 1px _palette(border);
+  }
+}
+
+.gatsby-highlight {
+  background-color: #2d2d2d;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+  code {
+    padding: 0;
+  }
+}

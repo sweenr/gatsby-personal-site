@@ -1,17 +1,12 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
+import { Seo } from '../components/Seo'
 
 const Projects = (props) => (
   <Layout>
-    <Helmet>
-      <title>Projects</title>
-      <meta name="description" content="Projects by Richard Sween" />
-    </Helmet>
-
     <BannerLanding
       heading="Projects"
       subheading={<p>Stuff I've worked on for fun and profit.</p>}
@@ -127,3 +122,7 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => (
+  <Seo title="Projects" description={'Projects by Richard Sween'} />
+)

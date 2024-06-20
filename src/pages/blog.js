@@ -1,15 +1,10 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
+import { Seo } from '../components/Seo'
 
 const Blog = (props) => (
   <Layout>
-    <Helmet>
-      <title>Blog</title>
-      <meta name="description" content="Richard Sween's Blog" />
-    </Helmet>
-
     <div id="main" className="alt">
       <section id="one">
         <div className="inner">
@@ -71,3 +66,7 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => (
+  <Seo title="Blog" description={`Richard Sween's Blog`} />
+)

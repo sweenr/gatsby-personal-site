@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Banner from '../components/Banner'
 import { getSrc } from 'gatsby-plugin-image'
+import { Seo } from '../components/Seo'
 
 const HomeIndex = (props) => {
   const projector = getSrc(props.data.projector.childImageSharp.gatsbyImageData)
@@ -14,20 +14,6 @@ const HomeIndex = (props) => {
   const pic04 = getSrc(props.data.pic04.childImageSharp.gatsbyImageData)
   return (
     <Layout showContact={true}>
-      <Helmet
-        title="Home"
-        meta={[
-          {
-            name: 'description',
-            content: 'Personal website for Richard Sween',
-          },
-          {
-            name: 'keywords',
-            content: 'Richard Sween, Sween, developer, ux, software, web dev',
-          },
-        ]}
-      ></Helmet>
-
       <Banner />
 
       <div id="main">
@@ -110,3 +96,12 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => (
+  <Seo title="Home" description={'Personal website for Richard Sween'}>
+    <meta
+      name="keywords"
+      content="Richard Sween, Sween, developer, ux, software, web dev"
+    />
+  </Seo>
+)

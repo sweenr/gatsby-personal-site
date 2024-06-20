@@ -4,6 +4,7 @@ module.exports = {
     author: 'Richard Sween',
     description: 'The personal web site of Richard Sween, built with Gatsby',
     siteUrl: 'https://richardsween.dev',
+    twitterUsername: `@_richardsween`,
   },
   plugins: [
     {
@@ -53,6 +54,9 @@ module.exports = {
       options: {
         excerpt_separator: `<!-- endexcerpt -->`,
         plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {

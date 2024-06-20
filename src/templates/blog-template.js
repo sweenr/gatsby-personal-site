@@ -1,31 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image'
+import { Seo } from '../components/Seo'
 
-function BlogTemplate({ data }) {
-  const { markdownRemark, site } = data
-  const { frontmatter, html } = markdownRemark
-  console.log(frontmatter)
-  const { siteMetadata } = site
-  return (
-    <Layout>
-      <Helmet
+/* <Helmet
         meta={[
-          {
-            name: `description`,
-            content: frontmatter.description || siteMetadata.description,
-          },
-          {
-            property: `og:title`,
-            content: frontmatter.title || siteMetadata.title,
-          },
-          {
-            property: `og:description`,
-            content: frontmatter.description || siteMetadata.description,
-          },
-          {
+
+        
             property: `og:image`,
             content:
               siteMetadata.siteUrl +
@@ -35,26 +17,7 @@ function BlogTemplate({ data }) {
             name: `og:image:alt`,
             content: frontmatter.featuredImageAlt,
           },
-          {
-            property: `og:type`,
-            content: `article`,
-          },
-          {
-            name: `twitter:card`,
-            content: `summary`,
-          },
-          {
-            name: `twitter:creator`,
-            content: frontmatter.author || siteMetadata.author,
-          },
-          {
-            name: `twitter:title`,
-            content: frontmatter.title || siteMetadata.title,
-          },
-          {
-            name: `twitter:description`,
-            content: frontmatter.description || siteMetadata.description,
-          },
+
           {
             name: `twitter:image`,
             content:
@@ -68,7 +31,13 @@ function BlogTemplate({ data }) {
         ]}
       >
         <title>{frontmatter.title}</title>
-      </Helmet>
+      </Helmet> */
+
+function BlogTemplate({ data }) {
+  const { markdownRemark } = data
+  const { frontmatter, html } = markdownRemark
+  return (
+    <Layout>
       <div id="main" className="alt">
         <section id="one">
           <div className="inner">
@@ -98,15 +67,7 @@ function BlogTemplate({ data }) {
 export default BlogTemplate
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    site {
-      siteMetadata {
-        author
-        description
-        siteUrl
-        title
-      }
-    }
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -124,3 +85,19 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = ({ data, location }) => {
+  const { markdownRemark } = data
+  const { frontmatter } = markdownRemark
+  return (
+    <Seo
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={getSrc(frontmatter.featuredImage.childImageSharp.gatsbyImageData)}
+      imageAlt={frontmatter.featuredImageAlt}
+      pathname={location.pathname}
+    >
+      <meta name="og:type" content={'article'} />
+    </Seo>
+  )
+}
