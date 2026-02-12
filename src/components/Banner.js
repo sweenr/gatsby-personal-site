@@ -25,7 +25,7 @@ const Banner = () => {
         </header>
         <div className="content">
           <p>
-            I'm an engineering leader based in Jackson, MS. <br />
+            I'm an software development consultant based in Jackson, MS. <br />
             I'm passionate about user experience and helping people grow.
           </p>
           {/* <ul className="actions">

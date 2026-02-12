@@ -102,15 +102,15 @@ const Contact = () => {
             <div className="contact-method">
               <span className="icon alt fa-envelope"></span>
               <h3>Email</h3>
-              <a href="mailto:richard@richardsween.com">
-                richard@richardsween.com
+              <a href="mailto:richard@sween.dev">
+                richard@sween.dev
               </a>
             </div>
-            <div className="contact-method">
+            {/* <div className="contact-method">
               <span className="icon alt fa-twitter"></span>
               <h3>Twitter</h3>
               <a href="https://twitter.com/_RichardSween">@_RichardSween</a>
-            </div>
+            </div> */}
             <div className="contact-method">
               <span className="icon alt fa-github"></span>
               <h3>GitHub</h3>
